@@ -28,7 +28,6 @@ class ViewControllerSelectPhoto: UIViewController {
     var string = ""
     var selectedIndexPath: IndexPath?
     var pageControl = UIPageControl()
-    
     var cellSize: CGSize {
     var minimumLineSpacing: CGFloat = 0
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
@@ -105,9 +104,7 @@ class ViewControllerSelectPhoto: UIViewController {
                 }
                     let imageURL = cacheFolderURL.appendingPathComponent(name)
                  try fileManager.removeItem(at: imageURL)
-                    
                  // удаление файлов
-                
             } catch {
                 print(error.localizedDescription)
             }
@@ -192,10 +189,9 @@ class ViewControllerSelectPhoto: UIViewController {
     
     func swipeHorizontal() {
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-             flowLayout.scrollDirection = .horizontal
+            flowLayout.scrollDirection = .horizontal
             print("сделал свай по горизонта")
             collectionView.isPagingEnabled = true
-            
         }
         
     }
@@ -242,8 +238,6 @@ class ViewControllerSelectPhoto: UIViewController {
             viewCustom.imageView.tintColor = .systemGray
             print("Серый")
         }
-
-
     }
 
 //----------------------------------------ЗАКАНЧИВАЮТСЯ ФУНКЦИИ_______--------------------------//
@@ -253,7 +247,7 @@ class ViewControllerSelectPhoto: UIViewController {
 extension ViewControllerSelectPhoto: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ piker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        print("image was selected")
+        print("image was selected") 
         let image = info[.editedImage ] as? UIImage
         imageView.image = image
         saveImageForCollectionView(image)
@@ -273,13 +267,6 @@ extension ViewControllerSelectPhoto: UICollectionViewDataSource {
     
 
 func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    
-    if collectionView.isPagingEnabled == true {
-       // print("проверяю\(arrayBool[indexPath.item])")
-        let arrayBool = arrayUserClass.map({$0.likeImage})
-         imageLike = arrayBool[indexPath.item]
-        chekLike()
-    }
 
     guard  let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as? CustomCollectionViewCell else {
         return UICollectionViewCell()
@@ -326,6 +313,20 @@ extension ViewControllerSelectPhoto: UICollectionViewDelegate {
         collectionView.reloadData()
         collectionView.scrollToItem(at: indexPath, at: .centeredVertically, animated: false)
     }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let arrayBool = arrayUserClass.map({$0.likeImage}) 
+        let x = targetContentOffset.pointee.x
+        let item = Int(x / view.frame.width)
+        imageLike = arrayBool[item]
+        print("current cell: \(item)")
+        chekLike()
+        viewCustom.imageDidTapHandler = {
+            print("Image did tapped")
+            self.saveLike(self.stringArray[item])
+            self.changeLike()
+       }
+    }
 }
 
 extension ViewControllerSelectPhoto: UICollectionViewDelegateFlowLayout {
@@ -349,6 +350,7 @@ extension ViewControllerSelectPhoto: UICollectionViewDelegateFlowLayout {
 }
 
 extension ViewControllerSelectPhoto: UITextFieldDelegate {
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
        print("сработала кнопка return на клавиатуре")
         return true
