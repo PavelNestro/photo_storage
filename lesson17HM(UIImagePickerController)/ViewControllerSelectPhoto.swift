@@ -17,15 +17,17 @@ class ViewControllerSelectPhoto: UIViewController {
    
     
     let user = User()
-    
     let imageView = UIImageView()
+    var message = [Comments]()
     var stringArray: [String] = []
     var photoArrayDone: [UIImage?] = []
     var arrayUserClass:[User] = []
     var current = 0
     var stringIndexPath = ""
     var imageLike = false
+    var imageComments = true
     var string = ""
+    var name = ""
     var selectedIndexPath: IndexPath?
     var pageControl = UIPageControl()
     var cellSize: CGSize {
@@ -49,7 +51,6 @@ class ViewControllerSelectPhoto: UIViewController {
         
         viewCustom.imageView.image = nil
         viewCustomButtonComments.imageView.image = nil
-       
 
 
         
@@ -57,6 +58,7 @@ class ViewControllerSelectPhoto: UIViewController {
           arrayUserClass = user.load(.keyForUserArray)
          print("колличество объектов класса \(arrayUserClass.count)")
          print(arrayUserClass.map({$0.nameImageforLike}))
+      // -------------------------------------------------------------//
 
         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
 
@@ -215,17 +217,27 @@ class ViewControllerSelectPhoto: UIViewController {
         print(arrayUserClass.map({$0.likeImage}))
     }
     
+    func saveComment(_ stringNamePng: String) {
+        arrayUserClass = user.load(.keyForUserArray)
+        print("колличество объектов класса \(arrayUserClass.count)")
+        print(arrayUserClass.map({$0.nameImageforLike}))
+        guard let objectUser = arrayUserClass.filter({$0.nameImageforLike == stringNamePng}).first else {
+            return
+        }
+        objectUser.comments = message
+        user.save(arrayUserClass, .keyForUserArray)
+        print(arrayUserClass.map({$0.comments}))
+    }
+    
     func chekLike() {
         if imageLike == true {
             viewCustom.imageView.image = viewCustom.image
             viewCustom.imageView.tintColor = .red
             print("red")
-            viewCustomButtonComments.imageView.image = viewCustomButtonComments.image
         } else {
             viewCustom.imageView.image = viewCustom.image
             viewCustom.imageView.tintColor = .systemGray
             print("gray")
-            viewCustomButtonComments.imageView.image = viewCustomButtonComments.image
         }
     }
     
@@ -238,6 +250,24 @@ class ViewControllerSelectPhoto: UIViewController {
             viewCustom.imageView.tintColor = .systemGray
             print("Серый")
         }
+    }
+    
+    func chekeComment() {
+        imageComments = !imageComments
+        if imageComments == true {
+            viewCustomButtonComments.imageView.image = viewCustomButtonComments.image
+            viewCustomButtonComments.imageView.tintColor = .white
+            print("Белый")
+        } else {
+            viewCustomButtonComments.imageView.image = viewCustomButtonComments.image
+            viewCustomButtonComments.imageView.tintColor = .systemGray
+            print("Серый")
+        }
+    }
+    
+   func createCommentViewController() {
+        let viewController = ViewControllerFactory.sheard.createCommentViewController()
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 
 //----------------------------------------ЗАКАНЧИВАЮТСЯ ФУНКЦИИ_______--------------------------//
@@ -254,12 +284,8 @@ extension ViewControllerSelectPhoto: UIImagePickerControllerDelegate, UINavigati
         piker.dismiss(animated: true)
         
     }
-
-    
-
-
-
 }
+
 extension ViewControllerSelectPhoto: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return stringArray.count
@@ -267,7 +293,6 @@ extension ViewControllerSelectPhoto: UICollectionViewDataSource {
     
 
 func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
     guard  let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as? CustomCollectionViewCell else {
         return UICollectionViewCell()
     }
@@ -295,15 +320,22 @@ extension ViewControllerSelectPhoto: UICollectionViewDelegate {
             self.saveLike(self.stringArray[indexPath.item])
             self.changeLike()
        }
+        viewCustomButtonComments.imageDidTapHandler = {
+            print("ImageComments did tapped")
+            self.createCommentViewController()
+        }
         //--------------------------кусок вставил
         let arrayBool = arrayUserClass.map({$0.likeImage})
         imageLike = arrayBool[indexPath.item]
         chekLike()
+        chekeComment()
         print(imageLike)
         //----------------------------
         if selectedIndexPath == nil {
             selectedIndexPath = indexPath
             swipeHorizontal()
+            name = stringArray[indexPath.item]
+            UserDefaults.standard.setValue(name, forKey: .test)
         } else {
             selectedIndexPath = nil
             swipeVertically()
@@ -315,12 +347,17 @@ extension ViewControllerSelectPhoto: UICollectionViewDelegate {
     }
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        let arrayBool = arrayUserClass.map({$0.likeImage}) 
+        let arrayBool = arrayUserClass.map({$0.likeImage})
         let x = targetContentOffset.pointee.x
         let item = Int(x / view.frame.width)
         imageLike = arrayBool[item]
         print("current cell: \(item)")
-        chekLike()
+        print("название картинки для предачи коммента\(stringArray[item])")
+        name = stringArray[item]
+        UserDefaults.standard.setValue(name, forKey: .test)
+        if selectedIndexPath != nil {
+            chekLike()
+        }
         viewCustom.imageDidTapHandler = {
             print("Image did tapped")
             self.saveLike(self.stringArray[item])

@@ -14,4 +14,5 @@ case KeyForUserDefaults = "keyUser_defaults"
     case keyForSaveLike = "save_like"
     case keyForUserArray = "user_array"
     case test = "test"
+    case keyForComment = "keyComments"
 }

@@ -12,8 +12,6 @@ class ViewCustom: UIView {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet var conteinerView: UIView!
 static let sheard = ViewCustom()
-    var imageLike = false
-    var current = 0
     let user = User()
     @IBInspectable var cornerRadius: CGFloat {
         set { // вызывает когда мы присваиваем новое значение

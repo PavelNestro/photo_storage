@@ -12,6 +12,10 @@ class Comments: Codable {
     var data: Date
     var comment: String
     
+    init(comment: String, data: Date) {
+        self.comment = comment
+        self.data = data
+    }
     
     enum CodingKeys: String, CodingKey {
         case data = "data"
