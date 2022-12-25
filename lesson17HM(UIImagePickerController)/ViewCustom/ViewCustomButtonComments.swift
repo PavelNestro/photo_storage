@@ -25,7 +25,8 @@ class ViewCustomButtonComments: UIView {
         }
     }
     
-    var image: UIImage? = UIImage(systemName: "bubble.left") {
+    var imageDidTapHandler: (() -> ())?
+    var image: UIImage? = UIImage(systemName: "bubble.left.fill") {
         didSet {
             self.imageView.image = image
 
@@ -38,7 +39,7 @@ class ViewCustomButtonComments: UIView {
         setup()
     }
 
-    required init?(coder: NSCoder) { // он обящательный
+    required init?(coder: NSCoder) { // он обязательный
         super.init(coder: coder)
         setup()
     }
@@ -53,6 +54,18 @@ class ViewCustomButtonComments: UIView {
         viewContainer.fixInContiner(self) // посетим наш контент вью и закрепим со всех сторон констрейнами
         self.layer.masksToBounds = true // чтобы закруглился наш контент вью если мы этого не сделаем то закрушление проихойдет только с вью а контент вьб которое лежит на ней не закруглится
         #endif
+       setupTapGesture()
+    }
+    
+    private func setupTapGesture() {
+        let tapGesture = UITapGestureRecognizer()
+        tapGesture.numberOfTapsRequired = 1
+        tapGesture.addTarget(self, action: #selector(handleTap(_:)))
+        self.addGestureRecognizer(tapGesture)
         
     }
+    @objc private func handleTap(_ sender: UITapGestureRecognizer)  {
+        imageDidTapHandler?()
+    }
+    
 }

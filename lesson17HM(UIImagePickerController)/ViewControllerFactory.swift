@@ -19,5 +19,12 @@ class ViewControllerFactory {
         return viewController
     }
     
+    func createCommentViewController() -> CommentViewController {
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "CommentViewController") as? CommentViewController else {
+            return CommentViewController()
+        }
+        return viewController
+    }
+    
     
 }

@@ -11,7 +11,10 @@
 		F03202BB291EA14300931F48 /* ViewCustomButtonComments.xib in Resources */ = {isa = PBXBuildFile; fileRef = F03202BA291EA14300931F48 /* ViewCustomButtonComments.xib */; };
 		F03202BD291EA59B00931F48 /* ViewCustomButtonComments.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03202BC291EA59B00931F48 /* ViewCustomButtonComments.swift */; };
 		F03F8B0928C4F97C00D63BB0 /* UserDefaults+key.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03F8B0828C4F97C00D63BB0 /* UserDefaults+key.swift */; };
+		F04F5BE32955C9090063193A /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04F5BE22955C9090063193A /* MessageTableViewCell.swift */; };
+		F04F5BE92955CC460063193A /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F04F5BE82955CC460063193A /* MessageTableViewCell.xib */; };
 		F05C9A7128A133D3009540D4 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05C9A7028A133D3009540D4 /* ViewControllerFactory.swift */; };
+		F063E2EA2954A7370007C62C /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F063E2E92954A7370007C62C /* CommentViewController.swift */; };
 		F09DE0DE28FF1BB100C4DC19 /* Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09DE0DD28FF1BB100C4DC19 /* Comments.swift */; };
 		F09FECC428A283EC00B20F21 /* ViewCustom.xib in Resources */ = {isa = PBXBuildFile; fileRef = F09FECC328A283EC00B20F21 /* ViewCustom.xib */; };
 		F09FECC828A285DA00B20F21 /* ViewCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09FECC728A285DA00B20F21 /* ViewCustom.swift */; };
@@ -34,7 +37,10 @@
 		F03202BA291EA14300931F48 /* ViewCustomButtonComments.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewCustomButtonComments.xib; sourceTree = "<group>"; };
 		F03202BC291EA59B00931F48 /* ViewCustomButtonComments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCustomButtonComments.swift; sourceTree = "<group>"; };
 		F03F8B0828C4F97C00D63BB0 /* UserDefaults+key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+key.swift"; sourceTree = "<group>"; };
+		F04F5BE22955C9090063193A /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		F04F5BE82955CC460063193A /* MessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
 		F05C9A7028A133D3009540D4 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
+		F063E2E92954A7370007C62C /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		F09DE0DD28FF1BB100C4DC19 /* Comments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comments.swift; sourceTree = "<group>"; };
 		F09FECC328A283EC00B20F21 /* ViewCustom.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewCustom.xib; sourceTree = "<group>"; };
 		F09FECC728A285DA00B20F21 /* ViewCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCustom.swift; sourceTree = "<group>"; };
@@ -73,6 +79,8 @@
 				F01A2E4728E5B59F00A21E92 /* CustomCollectionViewCell.swift */,
 				F03202BA291EA14300931F48 /* ViewCustomButtonComments.xib */,
 				F03202BC291EA59B00931F48 /* ViewCustomButtonComments.swift */,
+				F04F5BE22955C9090063193A /* MessageTableViewCell.swift */,
+				F04F5BE82955CC460063193A /* MessageTableViewCell.xib */,
 			);
 			path = ViewCustom;
 			sourceTree = "<group>";
@@ -119,6 +127,7 @@
 				F0FBC05D289FE9D20005C7EC /* SceneDelegate.swift */,
 				F0FBC05F289FE9D20005C7EC /* ViewController.swift */,
 				F0FBC071289FEEF50005C7EC /* ViewControllerSelectPhoto.swift */,
+				F063E2E92954A7370007C62C /* CommentViewController.swift */,
 				F05C9A7028A133D3009540D4 /* ViewControllerFactory.swift */,
 				F0F29EAB28C788BF0086AD30 /* Image.swift */,
 				F0F29EAD28C7896A0086AD30 /* Stored.swift */,
@@ -192,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0FBC068289FE9D30005C7EC /* LaunchScreen.storyboard in Resources */,
+				F04F5BE92955CC460063193A /* MessageTableViewCell.xib in Resources */,
 				F09FECC428A283EC00B20F21 /* ViewCustom.xib in Resources */,
 				F03202BB291EA14300931F48 /* ViewCustomButtonComments.xib in Resources */,
 				F0FBC065289FE9D30005C7EC /* Assets.xcassets in Resources */,
@@ -209,11 +219,13 @@
 				F03F8B0928C4F97C00D63BB0 /* UserDefaults+key.swift in Sources */,
 				F0F5859428B4FC82004610AD /* UIView+FixInConteiner.swift in Sources */,
 				F0FBC060289FE9D20005C7EC /* ViewController.swift in Sources */,
+				F04F5BE32955C9090063193A /* MessageTableViewCell.swift in Sources */,
 				F09DE0DE28FF1BB100C4DC19 /* Comments.swift in Sources */,
 				F01A2E4828E5B59F00A21E92 /* CustomCollectionViewCell.swift in Sources */,
 				F09FECC828A285DA00B20F21 /* ViewCustom.swift in Sources */,
 				F0FBC05C289FE9D20005C7EC /* AppDelegate.swift in Sources */,
 				F03202BD291EA59B00931F48 /* ViewCustomButtonComments.swift in Sources */,
+				F063E2EA2954A7370007C62C /* CommentViewController.swift in Sources */,
 				F0FBC05E289FE9D20005C7EC /* SceneDelegate.swift in Sources */,
 				F0FBC074289FFBDD0005C7EC /* User.swift in Sources */,
 				F05C9A7128A133D3009540D4 /* ViewControllerFactory.swift in Sources */,
