@@ -10,21 +10,21 @@ import UIKit
 
 @IBDesignable
 class ViewCustomButtonComments: UIView {
-    
+
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet var viewContainer: UIView!
-    
+
     @IBInspectable var cornerRadius: CGFloat {
-        set { // вызывает когда мы присваиваем новое значение
-         
-//
-            self.layer.cornerRadius = newValue
-        }
+
         get {
             return self.layer.cornerRadius
         }
+        set { // вызывает когда мы присваиваем новое значение
+
+            self.layer.cornerRadius = newValue
+        }
     }
-    
+
     var imageDidTapHandler: (() -> ())?
     var image: UIImage? = UIImage(systemName: "bubble.left.fill") {
         didSet {
@@ -32,8 +32,7 @@ class ViewCustomButtonComments: UIView {
 
         }
     }
-    
-    
+
     override init(frame: CGRect) { // инициализатор с какой то рамкой внутри которого у нас отобразится наш вью
         super .init(frame: frame) // вызываем init родительского класса
         setup()
@@ -43,11 +42,11 @@ class ViewCustomButtonComments: UIView {
         super.init(coder: coder)
         setup()
     }
-    
+
     private func setup() {
         Bundle(for: ViewCustomButtonComments.self).loadNibNamed(String(describing: ViewCustomButtonComments.self), owner: self, options: nil)
         #if TARGET_INTERFACE_BUILDER //
-        //owner - владелец пердадим self
+        // owner - владелец пердадим self
         viewContainer.frame = self.bounds
         self.addSubview(viewContainer)
         #else
@@ -56,16 +55,16 @@ class ViewCustomButtonComments: UIView {
         #endif
        setupTapGesture()
     }
-    
+
     private func setupTapGesture() {
         let tapGesture = UITapGestureRecognizer()
         tapGesture.numberOfTapsRequired = 1
         tapGesture.addTarget(self, action: #selector(handleTap(_:)))
         self.addGestureRecognizer(tapGesture)
-        
     }
-    @objc private func handleTap(_ sender: UITapGestureRecognizer)  {
+
+    @objc private func handleTap(_ sender: UITapGestureRecognizer) {
         imageDidTapHandler?()
     }
-    
+
 }
