@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E9D1A2BF3DD606BA1B499D9C /* Pods_lesson17HM_UIImagePickerController_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93C62432E8CDCDF4A4183746 /* Pods_lesson17HM_UIImagePickerController_.framework */; };
 		F01A2E4828E5B59F00A21E92 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01A2E4728E5B59F00A21E92 /* CustomCollectionViewCell.swift */; };
 		F03202BB291EA14300931F48 /* ViewCustomButtonComments.xib in Resources */ = {isa = PBXBuildFile; fileRef = F03202BA291EA14300931F48 /* ViewCustomButtonComments.xib */; };
 		F03202BD291EA59B00931F48 /* ViewCustomButtonComments.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03202BC291EA59B00931F48 /* ViewCustomButtonComments.swift */; };
@@ -18,7 +19,6 @@
 		F09DE0DE28FF1BB100C4DC19 /* Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09DE0DD28FF1BB100C4DC19 /* Comments.swift */; };
 		F09FECC428A283EC00B20F21 /* ViewCustom.xib in Resources */ = {isa = PBXBuildFile; fileRef = F09FECC328A283EC00B20F21 /* ViewCustom.xib */; };
 		F09FECC828A285DA00B20F21 /* ViewCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09FECC728A285DA00B20F21 /* ViewCustom.swift */; };
-		F0F29EAC28C788BF0086AD30 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F29EAB28C788BF0086AD30 /* Image.swift */; };
 		F0F29EAE28C7896A0086AD30 /* Stored.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F29EAD28C7896A0086AD30 /* Stored.swift */; };
 		F0F5859428B4FC82004610AD /* UIView+FixInConteiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F5859328B4FC82004610AD /* UIView+FixInConteiner.swift */; };
 		F0FBC05C289FE9D20005C7EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBC05B289FE9D20005C7EC /* AppDelegate.swift */; };
@@ -33,6 +33,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2FA70B987202B0EF48F65667 /* Pods-lesson17HM(UIImagePickerController).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lesson17HM(UIImagePickerController).release.xcconfig"; path = "Target Support Files/Pods-lesson17HM(UIImagePickerController)/Pods-lesson17HM(UIImagePickerController).release.xcconfig"; sourceTree = "<group>"; };
+		530FCB40930006D05CA5092E /* Pods-lesson17HM(UIImagePickerController).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lesson17HM(UIImagePickerController).debug.xcconfig"; path = "Target Support Files/Pods-lesson17HM(UIImagePickerController)/Pods-lesson17HM(UIImagePickerController).debug.xcconfig"; sourceTree = "<group>"; };
+		93C62432E8CDCDF4A4183746 /* Pods_lesson17HM_UIImagePickerController_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lesson17HM_UIImagePickerController_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F01A2E4728E5B59F00A21E92 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		F03202BA291EA14300931F48 /* ViewCustomButtonComments.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewCustomButtonComments.xib; sourceTree = "<group>"; };
 		F03202BC291EA59B00931F48 /* ViewCustomButtonComments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCustomButtonComments.swift; sourceTree = "<group>"; };
@@ -44,7 +47,6 @@
 		F09DE0DD28FF1BB100C4DC19 /* Comments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comments.swift; sourceTree = "<group>"; };
 		F09FECC328A283EC00B20F21 /* ViewCustom.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewCustom.xib; sourceTree = "<group>"; };
 		F09FECC728A285DA00B20F21 /* ViewCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCustom.swift; sourceTree = "<group>"; };
-		F0F29EAB28C788BF0086AD30 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		F0F29EAD28C7896A0086AD30 /* Stored.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stored.swift; sourceTree = "<group>"; };
 		F0F5859328B4FC82004610AD /* UIView+FixInConteiner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+FixInConteiner.swift"; sourceTree = "<group>"; };
 		F0FBC058289FE9D20005C7EC /* lesson17HM(UIImagePickerController).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "lesson17HM(UIImagePickerController).app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,12 +67,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9D1A2BF3DD606BA1B499D9C /* Pods_lesson17HM_UIImagePickerController_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9921CADBEFCCE865CA8F2811 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				93C62432E8CDCDF4A4183746 /* Pods_lesson17HM_UIImagePickerController_.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D6E34635DA91B6ABB185CAD5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				530FCB40930006D05CA5092E /* Pods-lesson17HM(UIImagePickerController).debug.xcconfig */,
+				2FA70B987202B0EF48F65667 /* Pods-lesson17HM(UIImagePickerController).release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F0D1814A28AA7CC000629A1B /* ViewCustom */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +129,8 @@
 			children = (
 				F0FBC05A289FE9D20005C7EC /* lesson17HM(UIImagePickerController) */,
 				F0FBC059289FE9D20005C7EC /* Products */,
+				D6E34635DA91B6ABB185CAD5 /* Pods */,
+				9921CADBEFCCE865CA8F2811 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,7 +151,6 @@
 				F0FBC071289FEEF50005C7EC /* ViewControllerSelectPhoto.swift */,
 				F063E2E92954A7370007C62C /* CommentViewController.swift */,
 				F05C9A7028A133D3009540D4 /* ViewControllerFactory.swift */,
-				F0F29EAB28C788BF0086AD30 /* Image.swift */,
 				F0F29EAD28C7896A0086AD30 /* Stored.swift */,
 				F0F5859228B4FC66004610AD /* Extancion */,
 				F0D1814B28AA7CD700629A1B /* UserDefaults */,
@@ -149,6 +170,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F0FBC06C289FE9D30005C7EC /* Build configuration list for PBXNativeTarget "lesson17HM(UIImagePickerController)" */;
 			buildPhases = (
+				B51F2C2E72A130E607F358CF /* [CP] Check Pods Manifest.lock */,
+				F054EDBE295F2F41005722A9 /* SwiftLint */,
 				F0FBC054289FE9D20005C7EC /* Sources */,
 				F0FBC055289FE9D20005C7EC /* Frameworks */,
 				F0FBC056289FE9D20005C7EC /* Resources */,
@@ -211,6 +234,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B51F2C2E72A130E607F358CF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-lesson17HM(UIImagePickerController)-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F054EDBE295F2F41005722A9 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F0FBC054289FE9D20005C7EC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -231,7 +297,6 @@
 				F05C9A7128A133D3009540D4 /* ViewControllerFactory.swift in Sources */,
 				F0F29EAE28C7896A0086AD30 /* Stored.swift in Sources */,
 				F0FBC076289FFCF20005C7EC /* UserDefaultsKeys.swift in Sources */,
-				F0F29EAC28C788BF0086AD30 /* Image.swift in Sources */,
 				F0FBC072289FEEF50005C7EC /* ViewControllerSelectPhoto.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,6 +439,7 @@
 		};
 		F0FBC06D289FE9D30005C7EC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 530FCB40930006D05CA5092E /* Pods-lesson17HM(UIImagePickerController).debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -402,6 +468,7 @@
 		};
 		F0FBC06E289FE9D30005C7EC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FA70B987202B0EF48F65667 /* Pods-lesson17HM(UIImagePickerController).release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

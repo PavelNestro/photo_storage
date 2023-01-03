@@ -9,9 +9,9 @@ import Foundation
 import UIKit
 
 class MessageTableViewCell: UITableViewCell {
-    
+
     static let identifier = "MassageTableViewCell"
-    
+
     @IBOutlet weak var messageContentView: UIView!
     @IBOutlet weak var timeLable: UILabel!
     @IBOutlet weak var textLable: UILabel!
@@ -22,7 +22,7 @@ class MessageTableViewCell: UITableViewCell {
         dateFormatter.locale =  Locale(identifier: "ru")
         return dateFormatter
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         setup()
@@ -30,11 +30,9 @@ class MessageTableViewCell: UITableViewCell {
     private func setup() {
           messageContentView.layer.cornerRadius = 14
       }
-    
+
     func setup(with message: Comments) {
         self.textLable.text = message.comment
         self.timeLable.text = dateFormatter.string(from: message.data)
     }
-    
-
 }

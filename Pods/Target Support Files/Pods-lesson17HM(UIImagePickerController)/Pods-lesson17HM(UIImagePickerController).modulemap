@@ -1,0 +1,6 @@
+framework module Pods_lesson17HM_UIImagePickerController_ {
+  umbrella header "Pods-lesson17HM(UIImagePickerController)-umbrella.h"
+
+  export *
+  module * { export * }
+}

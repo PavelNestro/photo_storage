@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var messageLable: UILabel!
     @IBOutlet weak var textFieldUserName: UITextField!
     @IBOutlet weak var textFieldPassword: UITextField!
-    
+
     let userDefault = UserDefaults.standard
     let user = User()
     private let minWordForPassword = 6
@@ -23,19 +23,19 @@ class ViewController: UIViewController {
         textFieldUserName.delegate = self
         textFieldPassword.delegate = self
         // создайте имя пользователя и пароль alert
-        
+
         if textFieldUserName == nil, textFieldPassword == nil {
             createAlertTextFields()
         }
-         
-      let userArray = User.sheard.load(.KeyForUserDefaults)
+
+      let userArray = User.sheard.load(.keyForUserDefaults)
         textFieldUserName.text = userArray.first?.name
         textFieldPassword.isSecureTextEntry = true
         textFieldPassword.text = userArray.first?.password
     }
-    
+
     @IBAction func buttonPressedOk(_ sender: UIButton) {
-        
+
         if let name = textFieldUserName.text, name.isEmpty == false {
             user.name = name
         }
@@ -54,17 +54,13 @@ class ViewController: UIViewController {
         }
         self.saveUser()
     }
-    
-    
-    
+
     func saveUser() {
-       
         let userArray = [user]
-        User.sheard.save(userArray, .KeyForUserDefaults)
+        User.sheard.save(userArray, .keyForUserDefaults)
     }
-    
+
     func createAlertTextFields() {
- 
         visualEffectBlur.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
         let alert = UIAlertController(title: "Sign in with ID", message: "Please sign in to your account to continue", preferredStyle: .alert)
                 present(alert, animated: true)
@@ -72,11 +68,12 @@ class ViewController: UIViewController {
                     self.blurAnimation()
                     print("Ok")
                 }
+
         let createAction = UIAlertAction(title: "Create", style: .default) { (_) in
             guard let fields = alert.textFields, fields.count == 2 else {
                 return
-               
             }
+
             let nameField = fields[0]
             let passwordField = fields[1]
             self.blurAnimation()
@@ -84,7 +81,7 @@ class ViewController: UIViewController {
                   let password =  passwordField.text, password.isEmpty == false else {
                 return
             }
-            
+
             self.textFieldUserName.text = name
             self.textFieldPassword.text = password
         }
@@ -100,32 +97,22 @@ class ViewController: UIViewController {
                 alert.addAction(createAction)
                 alert.addAction(okAction)
     }
-    
+
     func blurAnimation() {
-        
         UIView.animate(withDuration: 0.5, delay: 0, options: [.curveLinear]) {
         self.visualEffectBlur.alpha = 0
         } completion: { (_) in
-            
         }
-
-        
     }
 
-
-
-
-
-    
-    
 }
 
 extension ViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         print("should return")
-        //textField.resignFirstResponder() // resignFirstResponder() это объкет на котором сфокусирован пользователь те когда пользователь завершит печатать и нажемет return клавиатура скроется
-        
-        if textField == self.textFieldUserName{
+        // textField.resignFirstResponder() // resignFirstResponder() это объкет на котором сфокусирован пользователь те когда пользователь завершит печатать и нажемет return клавиатура скроется
+
+        if textField == self.textFieldUserName {
             textFieldPassword.becomeFirstResponder()
         } else if textField == self.textFieldPassword {
             textField.resignFirstResponder()
@@ -133,11 +120,3 @@ extension ViewController: UITextFieldDelegate {
         return true
     }
 }
-
-
-
-
-
-// добовляем фотографии в массив и сохроняем их чере file Manager, чтобы все картинки которые мы добавили были сохранены, пока мы их не отображаем. Хранилка картинок под паролем. При входе запрашивало пароль.
-// если новый пользователь новый пароль
-
