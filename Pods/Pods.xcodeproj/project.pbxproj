@@ -1,0 +1,711 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = AE7B4FB01588B9E6DF09CB79FC7CE7BD /* Build configuration list for PBXAggregateTarget "SwiftLint" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = SwiftLint;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		157F630677FF04C082FEE89EFEBED524 /* SwiftyKeychainKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C552CE87592FEF289D7AD8D2856A3DBA /* SwiftyKeychainKit-dummy.m */; };
+		1D9AF103600B9DBFEC24803CE6137816 /* Pods-lesson17HM(UIImagePickerController)-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 52618D1A2DF4C0D0DD153AF704C95527 /* Pods-lesson17HM(UIImagePickerController)-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		297AFAB1CECF480CC979FC0B4B7C7A58 /* KeychainSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847223E6C8F8E84D912B1CFC3912F5BD /* KeychainSerializable.swift */; };
+		5E68CB4A7EA2086D5BBF198CACCDBAA4 /* Pods-lesson17HM(UIImagePickerController)-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF6F6B79FC865C2923A31ECC76EB664 /* Pods-lesson17HM(UIImagePickerController)-dummy.m */; };
+		78CBDB0648BB0253287A1EDB69DE9497 /* SwiftyKeychainKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6308416DA0A2DCF7A2AA6597429278A0 /* SwiftyKeychainKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A13614DD699E7FAA63B7659C447DB8DC /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C4F9258B922802E1F16A76FFD51F69 /* Keychain.swift */; };
+		B83D678661A7A484A89A8A21BDC57704 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		BF7574AA22E06BE473CDFCA714567F5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		E42FF59F147B55495FDF111A21B79E36 /* KeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3065FC88E08779CA1FCC0EDA925E10E9 /* KeychainError.swift */; };
+		E6E9CAA717A24C2E6003944E77664CF3 /* KeychainBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391F147CCD2C2602DA28CDB2DD78C778 /* KeychainBridge.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		72C329A01AB1195E75DB889AA1DAE5A4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52B60EC2A583F24ACBB69C113F5488B9;
+			remoteInfo = SwiftLint;
+		};
+		B299F28D05A2F5CA6D8D35F1D5370080 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B9DFE73C3E0DB9CB93C095904997F37A;
+			remoteInfo = SwiftyKeychainKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0AF6F6B79FC865C2923A31ECC76EB664 /* Pods-lesson17HM(UIImagePickerController)-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-lesson17HM(UIImagePickerController)-dummy.m"; sourceTree = "<group>"; };
+		177C7B23D0503E8D832C0404619CFAB6 /* Pods-lesson17HM(UIImagePickerController)-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-lesson17HM(UIImagePickerController)-frameworks.sh"; sourceTree = "<group>"; };
+		24C4F9258B922802E1F16A76FFD51F69 /* Keychain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Keychain.swift; path = Sources/Keychain.swift; sourceTree = "<group>"; };
+		258C70C973F31097468E616D018311FC /* SwiftyKeychainKit */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyKeychainKit; path = SwiftyKeychainKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2732746C778BA4D8E47B8F190F749985 /* Pods-lesson17HM(UIImagePickerController) */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-lesson17HM(UIImagePickerController)"; path = Pods_lesson17HM_UIImagePickerController_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		28DF595E677F68B5D8FBB30574776D41 /* SwiftyKeychainKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyKeychainKit-prefix.pch"; sourceTree = "<group>"; };
+		3065FC88E08779CA1FCC0EDA925E10E9 /* KeychainError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeychainError.swift; path = Sources/KeychainError.swift; sourceTree = "<group>"; };
+		391F147CCD2C2602DA28CDB2DD78C778 /* KeychainBridge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeychainBridge.swift; path = Sources/KeychainBridge.swift; sourceTree = "<group>"; };
+		3D43DAC948A0F2C7578D8CFE55D75CD8 /* SwiftLint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.release.xcconfig; sourceTree = "<group>"; };
+		52618D1A2DF4C0D0DD153AF704C95527 /* Pods-lesson17HM(UIImagePickerController)-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-lesson17HM(UIImagePickerController)-umbrella.h"; sourceTree = "<group>"; };
+		553DD37B101959E982D9C8873D444F87 /* SwiftyKeychainKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyKeychainKit.debug.xcconfig; sourceTree = "<group>"; };
+		597FC713347C17BE5AE099A867A8486C /* SwiftyKeychainKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftyKeychainKit-Info.plist"; sourceTree = "<group>"; };
+		60BF6C71478B639B318EF1A1451FDCD6 /* Pods-lesson17HM(UIImagePickerController).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-lesson17HM(UIImagePickerController).release.xcconfig"; sourceTree = "<group>"; };
+		6308416DA0A2DCF7A2AA6597429278A0 /* SwiftyKeychainKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyKeychainKit-umbrella.h"; sourceTree = "<group>"; };
+		67EEE058732F17BD585A6071EBBFC19E /* Pods-lesson17HM(UIImagePickerController)-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-lesson17HM(UIImagePickerController)-Info.plist"; sourceTree = "<group>"; };
+		6A78117082E4D6ECA4962FBE7599E27A /* Pods-lesson17HM(UIImagePickerController).modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-lesson17HM(UIImagePickerController).modulemap"; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		847223E6C8F8E84D912B1CFC3912F5BD /* KeychainSerializable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeychainSerializable.swift; path = Sources/KeychainSerializable.swift; sourceTree = "<group>"; };
+		879603C5E74BBA58A137C8D95D0DCEC9 /* SwiftLint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.debug.xcconfig; sourceTree = "<group>"; };
+		8EF4C35779E685104EF1AFDAEC429739 /* Pods-lesson17HM(UIImagePickerController).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-lesson17HM(UIImagePickerController).debug.xcconfig"; sourceTree = "<group>"; };
+		93C431E2BAFE43879DC6E018EE605A94 /* Pods-lesson17HM(UIImagePickerController)-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-lesson17HM(UIImagePickerController)-acknowledgements.plist"; sourceTree = "<group>"; };
+		971EFAC29FD39AA2897F9FC432702014 /* SwiftyKeychainKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyKeychainKit.release.xcconfig; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B701E27E4BC86416D2392776838F0450 /* SwiftyKeychainKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyKeychainKit.modulemap; sourceTree = "<group>"; };
+		C552CE87592FEF289D7AD8D2856A3DBA /* SwiftyKeychainKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyKeychainKit-dummy.m"; sourceTree = "<group>"; };
+		FDA90E403A42373A9B7A6862BFAB6654 /* Pods-lesson17HM(UIImagePickerController)-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-lesson17HM(UIImagePickerController)-acknowledgements.markdown"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		385576E8AA985C9B158A82966F9E45C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B83D678661A7A484A89A8A21BDC57704 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B9B134662E3F141C5A648A656359486 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF7574AA22E06BE473CDFCA714567F5D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0081CFD0D9DEA6226A55C173F2B1A3B8 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				879603C5E74BBA58A137C8D95D0DCEC9 /* SwiftLint.debug.xcconfig */,
+				3D43DAC948A0F2C7578D8CFE55D75CD8 /* SwiftLint.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftLint";
+			sourceTree = "<group>";
+		};
+		1E8D8A9E447FF8A1A3E95613C6B27246 /* Pods-lesson17HM(UIImagePickerController) */ = {
+			isa = PBXGroup;
+			children = (
+				6A78117082E4D6ECA4962FBE7599E27A /* Pods-lesson17HM(UIImagePickerController).modulemap */,
+				FDA90E403A42373A9B7A6862BFAB6654 /* Pods-lesson17HM(UIImagePickerController)-acknowledgements.markdown */,
+				93C431E2BAFE43879DC6E018EE605A94 /* Pods-lesson17HM(UIImagePickerController)-acknowledgements.plist */,
+				0AF6F6B79FC865C2923A31ECC76EB664 /* Pods-lesson17HM(UIImagePickerController)-dummy.m */,
+				177C7B23D0503E8D832C0404619CFAB6 /* Pods-lesson17HM(UIImagePickerController)-frameworks.sh */,
+				67EEE058732F17BD585A6071EBBFC19E /* Pods-lesson17HM(UIImagePickerController)-Info.plist */,
+				52618D1A2DF4C0D0DD153AF704C95527 /* Pods-lesson17HM(UIImagePickerController)-umbrella.h */,
+				8EF4C35779E685104EF1AFDAEC429739 /* Pods-lesson17HM(UIImagePickerController).debug.xcconfig */,
+				60BF6C71478B639B318EF1A1451FDCD6 /* Pods-lesson17HM(UIImagePickerController).release.xcconfig */,
+			);
+			name = "Pods-lesson17HM(UIImagePickerController)";
+			path = "Target Support Files/Pods-lesson17HM(UIImagePickerController)";
+			sourceTree = "<group>";
+		};
+		468ABF285648AF8948DBCE5CD240C29F /* SwiftyKeychainKit */ = {
+			isa = PBXGroup;
+			children = (
+				24C4F9258B922802E1F16A76FFD51F69 /* Keychain.swift */,
+				391F147CCD2C2602DA28CDB2DD78C778 /* KeychainBridge.swift */,
+				3065FC88E08779CA1FCC0EDA925E10E9 /* KeychainError.swift */,
+				847223E6C8F8E84D912B1CFC3912F5BD /* KeychainSerializable.swift */,
+				F7DCB7A4520A0182F26558A9E4E5B0BB /* Support Files */,
+			);
+			name = SwiftyKeychainKit;
+			path = SwiftyKeychainKit;
+			sourceTree = "<group>";
+		};
+		5653000D490AC9D46AFA09EC431B0A11 /* SwiftLint */ = {
+			isa = PBXGroup;
+			children = (
+				0081CFD0D9DEA6226A55C173F2B1A3B8 /* Support Files */,
+			);
+			name = SwiftLint;
+			path = SwiftLint;
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		63209C336A8A9DC0CF18E4D45824FBC6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5653000D490AC9D46AFA09EC431B0A11 /* SwiftLint */,
+				468ABF285648AF8948DBCE5CD240C29F /* SwiftyKeychainKit */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6A83219DFBEC95EAF345B33A2445ACBB /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1E8D8A9E447FF8A1A3E95613C6B27246 /* Pods-lesson17HM(UIImagePickerController) */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		A16AD954BC7B1F7CA3C8CD8466803C6B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2732746C778BA4D8E47B8F190F749985 /* Pods-lesson17HM(UIImagePickerController) */,
+				258C70C973F31097468E616D018311FC /* SwiftyKeychainKit */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				63209C336A8A9DC0CF18E4D45824FBC6 /* Pods */,
+				A16AD954BC7B1F7CA3C8CD8466803C6B /* Products */,
+				6A83219DFBEC95EAF345B33A2445ACBB /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F7DCB7A4520A0182F26558A9E4E5B0BB /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B701E27E4BC86416D2392776838F0450 /* SwiftyKeychainKit.modulemap */,
+				C552CE87592FEF289D7AD8D2856A3DBA /* SwiftyKeychainKit-dummy.m */,
+				597FC713347C17BE5AE099A867A8486C /* SwiftyKeychainKit-Info.plist */,
+				28DF595E677F68B5D8FBB30574776D41 /* SwiftyKeychainKit-prefix.pch */,
+				6308416DA0A2DCF7A2AA6597429278A0 /* SwiftyKeychainKit-umbrella.h */,
+				553DD37B101959E982D9C8873D444F87 /* SwiftyKeychainKit.debug.xcconfig */,
+				971EFAC29FD39AA2897F9FC432702014 /* SwiftyKeychainKit.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftyKeychainKit";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7EEE447D2B9EDEDF9FAC29F466D65CD1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78CBDB0648BB0253287A1EDB69DE9497 /* SwiftyKeychainKit-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A25F38010E9A97890C855745833B7210 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D9AF103600B9DBFEC24803CE6137816 /* Pods-lesson17HM(UIImagePickerController)-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		80A6D6C5CF34D73BFAAB91DD298CEC15 /* Pods-lesson17HM(UIImagePickerController) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B0F8ADC7B23F7B68D1EE8189BD515D1 /* Build configuration list for PBXNativeTarget "Pods-lesson17HM(UIImagePickerController)" */;
+			buildPhases = (
+				A25F38010E9A97890C855745833B7210 /* Headers */,
+				1706B291B838203288ED10EF12351421 /* Sources */,
+				385576E8AA985C9B158A82966F9E45C8 /* Frameworks */,
+				5DC4CB04FF112E623CE6101756558131 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				825BDE2D5DB97C835A860C65702F16B1 /* PBXTargetDependency */,
+				0A39E0BDC445BE8E3ECF3FBB8EAE6EC3 /* PBXTargetDependency */,
+			);
+			name = "Pods-lesson17HM(UIImagePickerController)";
+			productName = Pods_lesson17HM_UIImagePickerController_;
+			productReference = 2732746C778BA4D8E47B8F190F749985 /* Pods-lesson17HM(UIImagePickerController) */;
+			productType = "com.apple.product-type.framework";
+		};
+		B9DFE73C3E0DB9CB93C095904997F37A /* SwiftyKeychainKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECADD345390B2C3E91FC21F9E1789D18 /* Build configuration list for PBXNativeTarget "SwiftyKeychainKit" */;
+			buildPhases = (
+				7EEE447D2B9EDEDF9FAC29F466D65CD1 /* Headers */,
+				9EEA1E5739F10A3B6401235528880832 /* Sources */,
+				9B9B134662E3F141C5A648A656359486 /* Frameworks */,
+				4458D7917CEE3E36FA16DD7642EFB05F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftyKeychainKit;
+			productName = SwiftyKeychainKit;
+			productReference = 258C70C973F31097468E616D018311FC /* SwiftyKeychainKit */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = A16AD954BC7B1F7CA3C8CD8466803C6B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				80A6D6C5CF34D73BFAAB91DD298CEC15 /* Pods-lesson17HM(UIImagePickerController) */,
+				52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */,
+				B9DFE73C3E0DB9CB93C095904997F37A /* SwiftyKeychainKit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4458D7917CEE3E36FA16DD7642EFB05F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DC4CB04FF112E623CE6101756558131 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1706B291B838203288ED10EF12351421 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E68CB4A7EA2086D5BBF198CACCDBAA4 /* Pods-lesson17HM(UIImagePickerController)-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9EEA1E5739F10A3B6401235528880832 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A13614DD699E7FAA63B7659C447DB8DC /* Keychain.swift in Sources */,
+				E6E9CAA717A24C2E6003944E77664CF3 /* KeychainBridge.swift in Sources */,
+				E42FF59F147B55495FDF111A21B79E36 /* KeychainError.swift in Sources */,
+				297AFAB1CECF480CC979FC0B4B7C7A58 /* KeychainSerializable.swift in Sources */,
+				157F630677FF04C082FEE89EFEBED524 /* SwiftyKeychainKit-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0A39E0BDC445BE8E3ECF3FBB8EAE6EC3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftyKeychainKit;
+			target = B9DFE73C3E0DB9CB93C095904997F37A /* SwiftyKeychainKit */;
+			targetProxy = B299F28D05A2F5CA6D8D35F1D5370080 /* PBXContainerItemProxy */;
+		};
+		825BDE2D5DB97C835A860C65702F16B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftLint;
+			target = 52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */;
+			targetProxy = 72C329A01AB1195E75DB889AA1DAE5A4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		440D45CEDE4C7E22DA5FDA6D633DFBAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 553DD37B101959E982D9C8873D444F87 /* SwiftyKeychainKit.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyKeychainKit/SwiftyKeychainKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyKeychainKit/SwiftyKeychainKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftyKeychainKit/SwiftyKeychainKit.modulemap";
+				PRODUCT_MODULE_NAME = SwiftyKeychainKit;
+				PRODUCT_NAME = SwiftyKeychainKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8AFCDE02AF97DD286E5C3AEB6977ACBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8EF4C35779E685104EF1AFDAEC429739 /* Pods-lesson17HM(UIImagePickerController).debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-lesson17HM(UIImagePickerController)/Pods-lesson17HM(UIImagePickerController)-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-lesson17HM(UIImagePickerController)/Pods-lesson17HM(UIImagePickerController).modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		92486E5E72E54FAF60E1A7D022C21B10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		934ED2B84836A780113D1F63484628B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		9A08272B197E028AB678C172B7B07828 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60BF6C71478B639B318EF1A1451FDCD6 /* Pods-lesson17HM(UIImagePickerController).release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-lesson17HM(UIImagePickerController)/Pods-lesson17HM(UIImagePickerController)-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-lesson17HM(UIImagePickerController)/Pods-lesson17HM(UIImagePickerController).modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AD81E62ACCB0B7A923FC8AA288F9921E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D43DAC948A0F2C7578D8CFE55D75CD8 /* SwiftLint.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EADD1F50ABC8096A0D6CB18822BB4EE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 879603C5E74BBA58A137C8D95D0DCEC9 /* SwiftLint.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F20D465C13EDA37B8FBA686E563E1520 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 971EFAC29FD39AA2897F9FC432702014 /* SwiftyKeychainKit.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyKeychainKit/SwiftyKeychainKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyKeychainKit/SwiftyKeychainKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftyKeychainKit/SwiftyKeychainKit.modulemap";
+				PRODUCT_MODULE_NAME = SwiftyKeychainKit;
+				PRODUCT_NAME = SwiftyKeychainKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1B0F8ADC7B23F7B68D1EE8189BD515D1 /* Build configuration list for PBXNativeTarget "Pods-lesson17HM(UIImagePickerController)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8AFCDE02AF97DD286E5C3AEB6977ACBF /* Debug */,
+				9A08272B197E028AB678C172B7B07828 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				934ED2B84836A780113D1F63484628B2 /* Debug */,
+				92486E5E72E54FAF60E1A7D022C21B10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE7B4FB01588B9E6DF09CB79FC7CE7BD /* Build configuration list for PBXAggregateTarget "SwiftLint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EADD1F50ABC8096A0D6CB18822BB4EE4 /* Debug */,
+				AD81E62ACCB0B7A923FC8AA288F9921E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECADD345390B2C3E91FC21F9E1789D18 /* Build configuration list for PBXNativeTarget "SwiftyKeychainKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				440D45CEDE4C7E22DA5FDA6D633DFBAC /* Debug */,
+				F20D465C13EDA37B8FBA686E563E1520 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
