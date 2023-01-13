@@ -17,13 +17,15 @@ class ViewControllerSelectPhoto: UIViewController {
     let user = User()
     let imageView = UIImageView()
     var message = [Comments]()
-    var stringArray: [String] = []
-    var photoArrayDone: [UIImage?] = []
+    var arrayNameImage: [String] = []
+    var arrayPhotoDone: [UIImage?] = []
     var arrayUserClass: [User] = []
+    var arrayUserNameProfile: [UserNameProfile] = []
     var imageLike = false
     var imageComments = true
     var string = ""
-    var name = ""
+    var nameImage = ""
+    var password = "123"
     var selectedIndexPath: IndexPath?
     var cellSize: CGSize {
     var minimumLineSpacing: CGFloat = 0
@@ -42,18 +44,10 @@ class ViewControllerSelectPhoto: UIViewController {
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
-
         viewCustom.imageView.image = nil
         viewCustomButtonComments.imageView.image = nil
-        arrayUserClass = user.load(.keyForUserArray)
-
-        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
-
         view.addSubview(viewCustom)
-
-        stringArray = arrayUserClass.map({$0.nameImageforLike})
-        photoArrayDone = getArrayImage(arrayUserClass)
-        print("названия картинок которые дожны продолжаться \(arrayUserClass.map({$0.nameImageforLike}))")
+        loadUserProfile(password)
     }
 
     @IBAction func selectedPhotoPressed(_ sender: Any) {
@@ -61,8 +55,8 @@ class ViewControllerSelectPhoto: UIViewController {
     }
 
     @IBAction func deletePhotoButtonPressed(_ sender: Any) {
-        deletePhoto(name)
-        deletedObjectUser(name)
+        deletePhoto(nameImage)
+        deletedObjectUser(nameImage)
     }
 
     func deletePhoto(_ nameImage: String) {
@@ -77,12 +71,12 @@ let imageNames = try fileManager.contentsOfDirectory(atPath: cacheFolderURL.path
                 }
                     let imageURL = cacheFolderURL.appendingPathComponent(name)
                  try fileManager.removeItem(at: imageURL)
-                 // удаление файлов
+
             } catch {
                 print(error.localizedDescription)
             }
     }
-        print("картинки удалена")
+        print("картинка удалена")
 
     }
     func deletedObjectUser(_ string: String) {
@@ -90,8 +84,8 @@ let imageNames = try fileManager.contentsOfDirectory(atPath: cacheFolderURL.path
         user.save(arrayUserClass, .keyForUserArray)
         let lastValue = user.load(.keyForUserArray)
                 arrayUserClass = lastValue
-                stringArray = arrayUserClass.map({$0.nameImageforLike})
-                photoArrayDone = getArrayImage(arrayUserClass)
+                arrayNameImage = arrayUserClass.map({$0.nameImageforLike})
+                arrayPhotoDone = getArrayImage(arrayUserClass)
                 collectionView.reloadData()
 
         }
@@ -124,7 +118,6 @@ let imageNames = try fileManager.contentsOfDirectory(atPath: cacheFolderURL.path
                             let imageData = try Data(contentsOf: imageURL)
                             if let images = UIImage(data: imageData) {
                                 savedImages.append(images)
-                                 // print(savedImages)
                             }
                         } catch {
                             print(error.localizedDescription)
@@ -149,17 +142,15 @@ let imageNames = try fileManager.contentsOfDirectory(atPath: cacheFolderURL.path
 
     func saveImageForCollectionView(_ image: UIImage?) {
         let objectUser = User()
-        let name = user.load(.keyForUserDefaults)
         string = saveImageToFolder(image)
         objectUser.nameImageforLike = string
-        objectUser.name = name.first?.name ?? ""
-        objectUser.password = name.first?.password ?? ""
         arrayUserClass.append(objectUser)
         objectUser.save(arrayUserClass, .keyForUserArray)
         let lastValue = objectUser.load(.keyForUserArray)
         arrayUserClass = lastValue
-        photoArrayDone = getArrayImage(arrayUserClass)
-        stringArray = arrayUserClass.map({$0.nameImageforLike})
+        arrayPhotoDone = getArrayImage(arrayUserClass)
+        arrayNameImage = arrayUserClass.map({$0.nameImageforLike})
+        saveUserProfile(password)
         collectionView.reloadData()
         print(arrayUserClass.count)
     }
@@ -188,6 +179,7 @@ let imageNames = try fileManager.contentsOfDirectory(atPath: cacheFolderURL.path
         }
         objectUser.likeImage = !objectUser.likeImage
         user.save(arrayUserClass, .keyForUserArray)
+        saveUserProfile(password)
         print(arrayUserClass.map({$0.likeImage}))
     }
 
@@ -200,6 +192,7 @@ let imageNames = try fileManager.contentsOfDirectory(atPath: cacheFolderURL.path
         }
         objectUser.comments = message
         user.save(arrayUserClass, .keyForUserArray)
+        saveUserProfile(password)
         print(arrayUserClass.map({$0.comments}))
     }
 
@@ -244,7 +237,36 @@ let imageNames = try fileManager.contentsOfDirectory(atPath: cacheFolderURL.path
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 
+    func saveUserProfile(_ password: String) {
+        arrayUserNameProfile = UserNameProfile.sheard.loadUserProfile(.keyUserProfile)
+        print("количество объектов класса UserNameProfile \(arrayUserNameProfile.count)")
+        arrayUserClass = user.load(.keyForUserArray)
+        if let objectProfile = arrayUserNameProfile.filter({$0.password == password}).first {
+            objectProfile.user = arrayUserClass
+            UserNameProfile.sheard.saveUserProfile(arrayUserNameProfile, .keyUserProfile)
+        } else {
+            print("нет такого пароля")
+        }
+
+    }
+
+    func loadUserProfile(_ password: String) {
+        arrayUserNameProfile = UserNameProfile.sheard.loadUserProfile(.keyUserProfile)
+        if let objectProfile =  arrayUserNameProfile.filter({$0.password == password}).first {
+            arrayUserClass = objectProfile.user
+            user.save(arrayUserClass, .keyForUserArray)
+            arrayUserClass = user.load(.keyForUserArray)
+            print(arrayUserClass.map({$0.nameImageforLike}))
+            print(arrayUserClass.map({$0.likeImage}))
+            arrayNameImage = arrayUserClass.map({$0.nameImageforLike})
+            arrayPhotoDone = getArrayImage(arrayUserClass)
+        } else {
+            print("нет такого пароля")
+        }
+    }
+
 }
+
 extension ViewControllerSelectPhoto: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     func imagePickerController(_ piker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
@@ -259,21 +281,21 @@ extension ViewControllerSelectPhoto: UIImagePickerControllerDelegate, UINavigati
 
 extension ViewControllerSelectPhoto: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return stringArray.count
+        return arrayNameImage.count
     }
 
 func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-guard  let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as? CustomCollectionViewCell else {
+guard  let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier,for: indexPath) as? CustomCollectionViewCell else {
         return UICollectionViewCell()
     }
-    if photoArrayDone.isEmpty {
+    if arrayPhotoDone.isEmpty {
         cell.imageView.image = imageView.image
-        stringArray.removeAll()
-        photoArrayDone.removeAll()
+        arrayNameImage.removeAll()
+        arrayPhotoDone.removeAll()
         arrayUserClass.removeAll()
     } else {
-        cell.imageView.image = photoArrayDone[indexPath.item]
-        cell.textLabel.text = "\(stringArray[indexPath.item])"
+        cell.imageView.image = arrayPhotoDone[indexPath.item]
+        cell.textLabel.text = "\(arrayNameImage[indexPath.item])"
 
     }
     cell.backgroundColor = .black
@@ -283,10 +305,10 @@ guard  let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Custom
 
 extension ViewControllerSelectPhoto: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(stringArray[indexPath.item])
+        print(arrayNameImage[indexPath.item])
         viewCustom.imageDidTapHandler = {
             print("Image did tapped")
-            self.saveLike(self.stringArray[indexPath.item])
+            self.saveLike(self.arrayNameImage[indexPath.item])
             self.changeLike()
        }
         viewCustomButtonComments.imageDidTapHandler = {
@@ -294,7 +316,10 @@ extension ViewControllerSelectPhoto: UICollectionViewDelegate {
             self.createCommentViewController()
         }
         // --------------------------кусок вставил
+
         let arrayBool = arrayUserClass.map({$0.likeImage})
+
+        print(arrayBool)
         imageLike = arrayBool[indexPath.item]
         chekLike()
         chekeComment()
@@ -303,8 +328,8 @@ extension ViewControllerSelectPhoto: UICollectionViewDelegate {
         if selectedIndexPath == nil {
             selectedIndexPath = indexPath
             swipeHorizontal()
-            name = stringArray[indexPath.item]
-            UserDefaults.standard.setValue(name, forKey: .keyForComments)
+            nameImage = arrayNameImage[indexPath.item]
+            UserDefaults.standard.setValue(nameImage, forKey: .keyForComments)
         } else {
             selectedIndexPath = nil
             swipeVertically()
@@ -321,14 +346,14 @@ extension ViewControllerSelectPhoto: UICollectionViewDelegate {
         let item = Int(xOrigin / view.frame.width)
         imageLike = arrayBool[item]
         print("current cell: \(item)")
-        name = stringArray[item]
-        UserDefaults.standard.setValue(name, forKey: .keyForComments)
+        nameImage = arrayNameImage[item]
+        UserDefaults.standard.setValue(nameImage, forKey: .keyForComments)
         if selectedIndexPath != nil {
             chekLike()
         }
         viewCustom.imageDidTapHandler = {
             print("Image did tapped")
-            self.saveLike(self.stringArray[item])
+            self.saveLike(self.arrayNameImage[item])
             self.changeLike()
        }
     }

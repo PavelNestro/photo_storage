@@ -15,6 +15,8 @@ class ViewController: UIViewController {
 
     let userDefault = UserDefaults.standard
     let user = User()
+    let userNameProfile = UserNameProfile()
+    var arrayUserProfile = [UserNameProfile]()
     private let minWordForPassword = 6
     private let passwordTest = "123456"
     let underFive = 0.0..<7.0
@@ -23,45 +25,47 @@ class ViewController: UIViewController {
         textFieldUserName.delegate = self
         textFieldPassword.delegate = self
         // создайте имя пользователя и пароль alert
-
         if textFieldUserName == nil, textFieldPassword == nil {
             createAlertTextFields()
         }
-
-      let userArray = User.sheard.load(.keyForUserDefaults)
-        textFieldUserName.text = userArray.first?.name
+        arrayUserProfile = userNameProfile.loadUserProfile(.keyUserProfile)
+        textFieldUserName.text = arrayUserProfile.last?.name
         textFieldPassword.isSecureTextEntry = true
-        textFieldPassword.text = userArray.first?.password
+        textFieldPassword.text = arrayUserProfile.last?.password
+    }
+
+    @IBAction func singInButtonPressed(_ sender: Any) {
+        createAlertTextFields()
     }
 
     @IBAction func buttonPressedOk(_ sender: UIButton) {
 
         if let name = textFieldUserName.text, name.isEmpty == false {
-            user.name = name
+           // userNameProfile.name = name
         }
         if let password = textFieldPassword.text, password.isEmpty == false {
-            user.password = password
-            if password != self.passwordTest {
-               print("неверный пароль")
-            } else {
+           // userNameProfile.password = password
+            if KeychainManager.sheard.validatePassword(password) {
                 print("все четко, проходи")
-           guard let viewController = ViewControllerFactory.sheard.createViewController() else {
+                guard let viewController = ViewControllerFactory.sheard.createViewController() else {
                     print("nil")
                     return
                 }
                 navigationController?.pushViewController(viewController, animated: true)
+            } else {
+                print("неверный пароль")
             }
+
         }
-        self.saveUser()
     }
 
     func saveUser() {
-        let userArray = [user]
-        User.sheard.save(userArray, .keyForUserDefaults)
+
     }
 
     func createAlertTextFields() {
         visualEffectBlur.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
+        let userProfileObject = UserNameProfile()
         let alert = UIAlertController(title: "Sign in with ID", message: "Please sign in to your account to continue", preferredStyle: .alert)
                 present(alert, animated: true)
                 let okAction = UIAlertAction(title: "Has already", style: .cancel) { (_) in
@@ -78,9 +82,15 @@ class ViewController: UIViewController {
             let passwordField = fields[1]
             self.blurAnimation()
             guard let name = nameField.text, name.isEmpty == false,
-                  let password =  passwordField.text, password.isEmpty == false else {
+                  let password = passwordField.text, password.isEmpty == false else {
                 return
             }
+            userProfileObject.name = name
+            userProfileObject.password = password
+            KeychainManager.sheard.savePassword(password)
+            self.arrayUserProfile.append(userProfileObject)
+            print(self.arrayUserProfile.count)
+            self.userNameProfile.saveUserProfile(self.arrayUserProfile, .keyUserProfile)
 
             self.textFieldUserName.text = name
             self.textFieldPassword.text = password

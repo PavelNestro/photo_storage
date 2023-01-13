@@ -11,18 +11,18 @@ class Stored {
     static let sheard = Stored()
     var imageUser = [User]()
 
-    func getUserClass() -> [User] {
-        if let imagesData = UserDefaults.standard.value(forKey: .keyForImageLike) as? Data {
-            do {
-                let array = try JSONDecoder().decode([User].self, from: imagesData)
-                return array
-            } catch {
-                print(error.localizedDescription)
-                return []
-            }
-        }
-        return []
-    }
+//    func getUserClass() -> [User] {
+//        if let imagesData = UserDefaults.standard.value(forKey: .keyForImageLike) as? Data {
+//            do {
+//                let array = try JSONDecoder().decode([User].self, from: imagesData)
+//                return array
+//            } catch {
+//                print(error.localizedDescription)
+//                return []
+//            }
+//        }
+//        return []
+//    }
 
     func getUserObject(for uid: String) -> User {
         if let imagesData = UserDefaults.standard.value(forKey: .keyForUserArray) as? Data {
@@ -43,7 +43,7 @@ class Stored {
         imageUser.append(imgeObject)
         print(imageUser.count)
         let arrayImageData = try?JSONEncoder().encode(imageUser)
-        UserDefaults.standard.set(arrayImageData, forKey: UserDefaultsKeys.keyForImageLike.rawValue)
+//        UserDefaults.standard.set(arrayImageData, forKey: UserDefaultsKeys.keyForImageLike.rawValue)
     }
 
 }

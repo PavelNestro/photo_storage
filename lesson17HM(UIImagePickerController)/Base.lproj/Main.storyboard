@@ -98,17 +98,47 @@
                                     <constraint firstAttribute="height" constant="200" id="cB7-d8-AHh"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0r-ZL-fNX">
+                                <rect key="frame" x="327" y="97" width="82" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="fn2-Kr-K0b"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Log Out ?">
+                                    <fontDescription key="titleFontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="20"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3EX-Qj-NkX">
+                                <rect key="frame" x="5" y="97" width="67" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Ypu-bM-7kW"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Sign in">
+                                    <fontDescription key="titleFontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="20"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="singInButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ArO-7B-I0o"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.11473362722865117" green="0.10830468075173533" blue="0.11793718434343436" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="3EX-Qj-NkX" firstAttribute="centerY" secondItem="g0r-ZL-fNX" secondAttribute="centerY" id="4V5-hT-XMM"/>
                             <constraint firstItem="Zu7-eb-Mr6" firstAttribute="top" secondItem="PlA-UB-SRH" secondAttribute="bottom" constant="40" id="4Wf-Rd-Yl3"/>
                             <constraint firstItem="jgu-e8-fFP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="5ty-Ku-Yrh"/>
                             <constraint firstItem="Zu7-eb-Mr6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="CHT-aD-r7K"/>
                             <constraint firstItem="FRm-C1-YzC" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="FZF-cm-YMb"/>
                             <constraint firstItem="Ekf-1r-phN" firstAttribute="top" secondItem="FRm-C1-YzC" secondAttribute="bottom" constant="50" id="HLu-8J-LUZ"/>
+                            <constraint firstItem="3EX-Qj-NkX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="I8I-CM-XJK"/>
+                            <constraint firstItem="3EX-Qj-NkX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="KDJ-Cf-79V"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="g0r-ZL-fNX" secondAttribute="trailing" constant="5" id="MrE-Dz-gSh"/>
                             <constraint firstItem="PlA-UB-SRH" firstAttribute="top" secondItem="Ekf-1r-phN" secondAttribute="bottom" constant="10" id="Ndy-cl-ZoN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Zu7-eb-Mr6" secondAttribute="trailing" constant="20" id="OFX-lL-EFg"/>
+                            <constraint firstItem="g0r-ZL-fNX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="Pe7-3b-Hsx"/>
                             <constraint firstItem="PlA-UB-SRH" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="QYR-V0-gUb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PlA-UB-SRH" secondAttribute="trailing" constant="20" id="U5h-v1-XTM"/>
                             <constraint firstItem="jgu-e8-fFP" firstAttribute="top" secondItem="Zu7-eb-Mr6" secondAttribute="bottom" constant="10" id="X7p-Cr-BkY"/>

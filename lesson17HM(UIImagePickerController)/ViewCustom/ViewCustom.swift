@@ -11,7 +11,6 @@ class ViewCustom: UIView {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet var conteinerView: UIView!
 static let sheard = ViewCustom()
-    let user = User()
     @IBInspectable var cornerRadius: CGFloat {
 
         get {
