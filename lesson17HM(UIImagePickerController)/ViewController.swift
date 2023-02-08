@@ -8,6 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var informationTextLabel: UILabel!
     @IBOutlet weak var visualEffectBlur: UIVisualEffectView!
     @IBOutlet weak var messageLable: UILabel!
     @IBOutlet weak var textFieldUserName: UITextField!
@@ -15,53 +16,64 @@ class ViewController: UIViewController {
 
     let userDefault = UserDefaults.standard
     let user = User()
-    private let minWordForPassword = 6
-    private let passwordTest = "123456"
-    let underFive = 0.0..<7.0
+    let userNameProfile = UserNameProfile()
+    var arrayUserProfile = [UserNameProfile]()
     override func viewDidLoad() {
         super.viewDidLoad()
         textFieldUserName.delegate = self
         textFieldPassword.delegate = self
-        // создайте имя пользователя и пароль alert
-
+        informationTextLabel.isHidden = true
         if textFieldUserName == nil, textFieldPassword == nil {
             createAlertTextFields()
         }
-
-      let userArray = User.sheard.load(.keyForUserDefaults)
-        textFieldUserName.text = userArray.first?.name
+        arrayUserProfile = userNameProfile.loadUserProfile(.keyUserProfile)
+        textFieldUserName.text = arrayUserProfile.last?.name
         textFieldPassword.isSecureTextEntry = true
-        textFieldPassword.text = userArray.first?.password
     }
 
+    @IBAction func singInButtonPressed(_ sender: Any) {
+        createAlertTextFields()
+    }
+
+    @IBAction func logOutButtonPressed(_ sender: Any) {
+        textFieldUserName.text = ""
+        textFieldPassword.text = ""
+        KeychainManager.sheard.clear()
+    }
     @IBAction func buttonPressedOk(_ sender: UIButton) {
 
         if let name = textFieldUserName.text, name.isEmpty == false {
-            user.name = name
-        }
-        if let password = textFieldPassword.text, password.isEmpty == false {
-            user.password = password
-            if password != self.passwordTest {
-               print("неверный пароль")
-            } else {
-                print("все четко, проходи")
-           guard let viewController = ViewControllerFactory.sheard.createViewController() else {
-                    print("nil")
-                    return
+            
+            if let password = textFieldPassword.text, password.isEmpty == false {
+
+                if arrayUserProfile.filter({$0.password == password}).first != nil && arrayUserProfile.filter({$0.name == name}).first != nil {
+                    KeychainManager.sheard.savePassword(password)
+                    if KeychainManager.sheard.validatePassword(password) {
+                        informationTextLabel.textColor = .green
+                        informationTextLabel.text = "Вход разрешен"
+                        informationTextLabel.isHidden = false
+                        guard let viewController = ViewControllerFactory.sheard.createViewController() else {
+                            print("nil")
+                            return
+                        }
+                        navigationController?.pushViewController(viewController, animated: true)
+                    }
+                } else {
+                    informationTextLabel.textColor = .red
+                    informationTextLabel.text = "Ошибка, Вы ввели неверное имя пользователя или пароль."
+                    informationTextLabel.isHidden = false
                 }
-                navigationController?.pushViewController(viewController, animated: true)
             }
-        }
-        self.saveUser()
+    }
     }
 
-    func saveUser() {
-        let userArray = [user]
-        User.sheard.save(userArray, .keyForUserDefaults)
+    func savePassword(_ password: String) {
+        UserDefaults.standard.setValue(password, forKey: .password)
     }
 
     func createAlertTextFields() {
         visualEffectBlur.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
+        let userProfileObject = UserNameProfile()
         let alert = UIAlertController(title: "Sign in with ID", message: "Please sign in to your account to continue", preferredStyle: .alert)
                 present(alert, animated: true)
                 let okAction = UIAlertAction(title: "Has already", style: .cancel) { (_) in
@@ -78,9 +90,15 @@ class ViewController: UIViewController {
             let passwordField = fields[1]
             self.blurAnimation()
             guard let name = nameField.text, name.isEmpty == false,
-                  let password =  passwordField.text, password.isEmpty == false else {
+                  let password = passwordField.text, password.isEmpty == false else {
                 return
             }
+            userProfileObject.name = name
+            userProfileObject.password = password
+            KeychainManager.sheard.savePassword(password)
+            self.arrayUserProfile.append(userProfileObject)
+            print(self.arrayUserProfile.count)
+            self.userNameProfile.saveUserProfile(self.arrayUserProfile, .keyUserProfile)
 
             self.textFieldUserName.text = name
             self.textFieldPassword.text = password
@@ -110,8 +128,7 @@ class ViewController: UIViewController {
 extension ViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         print("should return")
-        // textField.resignFirstResponder() // resignFirstResponder() это объкет на котором сфокусирован пользователь те когда пользователь завершит печатать и нажемет return клавиатура скроется
-
+        // textField.resignFirstResponder() resignFirstResponder() это объкет на котором сфокусирован пользователь
         if textField == self.textFieldUserName {
             textFieldPassword.becomeFirstResponder()
         } else if textField == self.textFieldPassword {

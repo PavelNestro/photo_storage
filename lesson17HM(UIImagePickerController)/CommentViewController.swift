@@ -34,7 +34,8 @@ class CommentViewController: UIViewController {
                                        selector: #selector(handleHideKeyboard(_:)),
                                        name: UIResponder.keyboardWillHideNotification,
                                        object: nil)
-      guard let lastValueName = UserDefaults.standard.value(forKey: .keyForComments) as? String else {
+      guard let lastValueName = UserDefaults.standard.value(forKey: .keyForComments)
+                as? String else {
             return
         }
             name = lastValueName
@@ -63,6 +64,7 @@ class CommentViewController: UIViewController {
             messages.append(stringComment)
             objectUser.comments = messages
             user.save(arrayUserClass, .keyForUserArray)
+            ViewControllerSelectPhoto.sheard.saveUserProfile(ViewControllerSelectPhoto.sheard.password)
         }
 
     }

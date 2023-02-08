@@ -8,8 +8,6 @@
 import Foundation
 import UIKit
 class User: Codable {
-    var name = ""
-    var password = ""
     var likeImage: Bool = false
     var nameImageforLike: String = ""
     var comments = [Comments]()
@@ -23,7 +21,7 @@ class User: Codable {
     func load(_ forkey: UserDefaultsKeys) -> [User] {
         if let encodedData = UserDefaults.standard.value(forKey: forkey.rawValue) as? Data {
             do {
-                let arrayUser = try JSONDecoder().decode([User].self, from: encodedData )
+                let arrayUser = try JSONDecoder().decode([User].self, from: encodedData)
                 return arrayUser
             } catch {
                 print(error.localizedDescription)
