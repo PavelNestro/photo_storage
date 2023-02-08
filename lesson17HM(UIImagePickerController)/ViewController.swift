@@ -8,6 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var informationTextLabel: UILabel!
     @IBOutlet weak var visualEffectBlur: UIVisualEffectView!
     @IBOutlet weak var messageLable: UILabel!
     @IBOutlet weak var textFieldUserName: UITextField!
@@ -17,50 +18,57 @@ class ViewController: UIViewController {
     let user = User()
     let userNameProfile = UserNameProfile()
     var arrayUserProfile = [UserNameProfile]()
-    private let minWordForPassword = 6
-    private let passwordTest = "123456"
-    let underFive = 0.0..<7.0
     override func viewDidLoad() {
         super.viewDidLoad()
         textFieldUserName.delegate = self
         textFieldPassword.delegate = self
-        // создайте имя пользователя и пароль alert
+        informationTextLabel.isHidden = true
         if textFieldUserName == nil, textFieldPassword == nil {
             createAlertTextFields()
         }
         arrayUserProfile = userNameProfile.loadUserProfile(.keyUserProfile)
         textFieldUserName.text = arrayUserProfile.last?.name
         textFieldPassword.isSecureTextEntry = true
-        textFieldPassword.text = arrayUserProfile.last?.password
     }
 
     @IBAction func singInButtonPressed(_ sender: Any) {
         createAlertTextFields()
     }
 
+    @IBAction func logOutButtonPressed(_ sender: Any) {
+        textFieldUserName.text = ""
+        textFieldPassword.text = ""
+        KeychainManager.sheard.clear()
+    }
     @IBAction func buttonPressedOk(_ sender: UIButton) {
 
         if let name = textFieldUserName.text, name.isEmpty == false {
-           // userNameProfile.name = name
-        }
-        if let password = textFieldPassword.text, password.isEmpty == false {
-           // userNameProfile.password = password
-            if KeychainManager.sheard.validatePassword(password) {
-                print("все четко, проходи")
-                guard let viewController = ViewControllerFactory.sheard.createViewController() else {
-                    print("nil")
-                    return
-                }
-                navigationController?.pushViewController(viewController, animated: true)
-            } else {
-                print("неверный пароль")
-            }
+            
+            if let password = textFieldPassword.text, password.isEmpty == false {
 
-        }
+                if arrayUserProfile.filter({$0.password == password}).first != nil && arrayUserProfile.filter({$0.name == name}).first != nil {
+                    KeychainManager.sheard.savePassword(password)
+                    if KeychainManager.sheard.validatePassword(password) {
+                        informationTextLabel.textColor = .green
+                        informationTextLabel.text = "Вход разрешен"
+                        informationTextLabel.isHidden = false
+                        guard let viewController = ViewControllerFactory.sheard.createViewController() else {
+                            print("nil")
+                            return
+                        }
+                        navigationController?.pushViewController(viewController, animated: true)
+                    }
+                } else {
+                    informationTextLabel.textColor = .red
+                    informationTextLabel.text = "Ошибка, Вы ввели неверное имя пользователя или пароль."
+                    informationTextLabel.isHidden = false
+                }
+            }
+    }
     }
 
-    func saveUser() {
-
+    func savePassword(_ password: String) {
+        UserDefaults.standard.setValue(password, forKey: .password)
     }
 
     func createAlertTextFields() {
@@ -120,8 +128,7 @@ class ViewController: UIViewController {
 extension ViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         print("should return")
-        // textField.resignFirstResponder() // resignFirstResponder() это объкет на котором сфокусирован пользователь те когда пользователь завершит печатать и нажемет return клавиатура скроется
-
+        // textField.resignFirstResponder() resignFirstResponder() это объкет на котором сфокусирован пользователь
         if textField == self.textFieldUserName {
             textFieldPassword.becomeFirstResponder()
         } else if textField == self.textFieldPassword {

@@ -25,7 +25,7 @@ class ViewControllerSelectPhoto: UIViewController {
     var imageComments = true
     var string = ""
     var nameImage = ""
-    var password = "123"
+    var password = "321"
     var selectedIndexPath: IndexPath?
     var cellSize: CGSize {
     var minimumLineSpacing: CGFloat = 0
@@ -47,6 +47,7 @@ class ViewControllerSelectPhoto: UIViewController {
         viewCustom.imageView.image = nil
         viewCustomButtonComments.imageView.image = nil
         view.addSubview(viewCustom)
+        let password = KeychainManager.sheard.getPassword() ?? ""
         loadUserProfile(password)
     }
 
@@ -240,6 +241,7 @@ let imageNames = try fileManager.contentsOfDirectory(atPath: cacheFolderURL.path
     func saveUserProfile(_ password: String) {
         arrayUserNameProfile = UserNameProfile.sheard.loadUserProfile(.keyUserProfile)
         print("количество объектов класса UserNameProfile \(arrayUserNameProfile.count)")
+
         arrayUserClass = user.load(.keyForUserArray)
         if let objectProfile = arrayUserNameProfile.filter({$0.password == password}).first {
             objectProfile.user = arrayUserClass

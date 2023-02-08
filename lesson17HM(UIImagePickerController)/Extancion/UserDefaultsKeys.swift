@@ -9,7 +9,7 @@ import Foundation
 
 enum UserDefaultsKeys: String {
 //    case keyForImageLike = "Key_For_Image"
-//    case keyForSaveLike = "save_like"
+    case password = "password"
     case keyForUserArray = "user_array"
     case keyForComments = "keyForComments"
     case keyUserProfile = "arrayUserProfile"

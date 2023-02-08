@@ -108,6 +108,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Log Out ?">
                                     <fontDescription key="titleFontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="20"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="logOutButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YMZ-Ou-xtb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3EX-Qj-NkX">
                                 <rect key="frame" x="5" y="97" width="67" height="44"/>
@@ -123,6 +126,12 @@
                                     <action selector="singInButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ArO-7B-I0o"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBB-0D-z0H">
+                                <rect key="frame" x="190.5" y="714" width="33" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.11473362722865117" green="0.10830468075173533" blue="0.11793718434343436" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -149,7 +158,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jgu-e8-fFP" secondAttribute="trailing" constant="20" id="q0s-jf-mSS"/>
                             <constraint firstItem="AS2-Yl-Q1c" firstAttribute="top" secondItem="jgu-e8-fFP" secondAttribute="bottom" constant="40" id="rCe-GJ-hbW"/>
                             <constraint firstItem="Ekf-1r-phN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="rEe-xX-OF3"/>
+                            <constraint firstItem="JBB-0D-z0H" firstAttribute="top" secondItem="jgu-e8-fFP" secondAttribute="bottom" constant="8" symbolic="YES" id="rUF-Ea-fli"/>
                             <constraint firstItem="Ekf-1r-phN" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="s4m-XF-waA"/>
+                            <constraint firstItem="JBB-0D-z0H" firstAttribute="centerX" secondItem="jgu-e8-fFP" secondAttribute="centerX" id="tCr-i3-YUM"/>
                             <constraint firstItem="Zu7-eb-Mr6" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="yKp-EQ-LbX"/>
                             <constraint firstItem="PlA-UB-SRH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="zUm-XV-n3Z"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AS2-Yl-Q1c" secondAttribute="bottom" constant="36" id="zkc-vP-I8Z"/>
@@ -157,6 +168,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="v96-K3-TPO"/>
                     <connections>
+                        <outlet property="informationTextLabel" destination="JBB-0D-z0H" id="c0T-Oj-Iqq"/>
                         <outlet property="textFieldPassword" destination="jgu-e8-fFP" id="fjZ-5M-leo"/>
                         <outlet property="textFieldUserName" destination="PlA-UB-SRH" id="aHn-7T-llQ"/>
                         <outlet property="visualEffectBlur" destination="gLa-9G-2Rp" id="RcC-nb-k6e"/>
@@ -440,6 +452,9 @@
         </systemColor>
         <systemColor name="tertiarySystemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiarySystemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

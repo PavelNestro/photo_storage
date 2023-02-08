@@ -13,7 +13,6 @@ class KeychainManager {
     private lazy var keychain = Keychain(service: "PNestere.lesson17HM-UIImagePickerController-")
     private let passwordKey = KeychainKey<String>(key: "password")
     private var arrayPasswordKey = [String]()
-
     private init() {}
 
     func validatePassword(_ password: String) -> Bool {
@@ -44,7 +43,8 @@ class KeychainManager {
             print(error.localizedDescription)
         }
     }
-    func saveArray(_ arrayString: [String]) {
-        UserDefaults.standard.set(arrayString, forKey: "testString")
+    func getPassword() -> String? {
+        let value = try? keychain.get(passwordKey)
+        return value
     }
 }
